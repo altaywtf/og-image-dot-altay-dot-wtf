@@ -163,7 +163,6 @@ const App = (_: any, state: AppState, setState: SetState) => {
     { className: "split" },
     H(
       "div",
-      { className: "pull-left" },
       H(
         "div",
         H(Field, {
@@ -180,7 +179,6 @@ const App = (_: any, state: AppState, setState: SetState) => {
     ),
     H(
       "div",
-      { className: "pull-right" },
       H(ImagePreview, {
         src: overrideUrl ? overrideUrl.href : url.href,
         loading: loading,

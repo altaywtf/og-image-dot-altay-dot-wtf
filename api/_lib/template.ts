@@ -1,4 +1,3 @@
-import marked from "marked";
 import { ParsedQuery } from "./types";
 
 const FONTS_ROOT = `https://altay.wtf/fonts`;
@@ -31,25 +30,76 @@ function getCss() {
     ${loadFont(TYPEFACE, `${FOLDER}-Bold`, 600)}
 
     body {
-        font-family: ${TYPEFACE};
-        font-size: 32px;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-text-size-adjust: none;
-        background: #101010;
-        color: white;
-        height: 100vh;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+      font-family: ${TYPEFACE};
+      font-size: 32px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: none;
+      letter-spacing: 0.015em;
+      word-spacing: 0.001em;
+      background: rgba(17, 17, 17, 1);
+      color: #FBFBFB;
+      height: 100vh;
+    }
+
+    main {
+      padding: 64px;
+      height: calc(100vh - 128px);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+    }
+
+    .heading img {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+    }
+
+    .heading span {
+      font-weight: bold;
+      font-size: 112px;
+      margin-left: 48px;
+    }
+
+    .content {
+      margin-bottom: 48px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 160px;
+    }
+
+    h2 {
+      font-size: 64px;
+      line-height: 1.4;
+      color: #98989D;
     }
     `;
 }
 
 export function getHtml(query: ParsedQuery) {
   const { type } = query;
+  console.log(type);
+
+  const renderNote = (title: string, oneliner: string) => `
+    <div class="content note">
+      <h1>${title}</h1>
+      <h2>${oneliner}</h2>
+    </div>
+  `;
 
   return `<!DOCTYPE html>
     <html>
@@ -61,7 +111,15 @@ export function getHtml(query: ParsedQuery) {
         </style>
         <body>
             <main>
-                <div class="heading">${marked(type)}</div>
+              <div class="heading">
+                <img src="https://altay.wtf/images/avatar.png" />
+                <span>altay.wtf</span>
+              </div>
+
+              ${renderNote(
+                "How do I read a book",
+                "It's more pleasant than playing 300 games of League of Legends during the lockdown."
+              )}
             </main>
         </body>
     </html>`;
