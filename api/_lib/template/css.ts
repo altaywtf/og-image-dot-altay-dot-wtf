@@ -22,53 +22,49 @@ export const css = `
     -webkit-text-size-adjust: none;
     letter-spacing: 0.015em;
     word-spacing: 0.001em;
-    background: ${colors.background};
-    background-image: url("${bodyBackgroundImageURL}");
+    word-break: break-word;
     color: ${colors.text};
+
+    background-color: ${colors.background};
+    background-image: url("${bodyBackgroundImageURL}");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
   }
 
   main {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 72px;
+    padding-bottom: 72px;
     padding-left: 96px;
     padding-right: 96px;
-    height: calc(100vh - 128px);
+    height: calc(100vh - 144px);
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
   }
 
   h1 {
-    font-size: 160px;
-    margin-bottom: 48px;
-    line-height: 1;
+    font-size: 200px;
   }
 
   h2 {
     font-size: 144px;
-    margin-bottom: 36px;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   h3 {
-    font-size: 96px;
+    font-size: 112px;
     color: ${colors.textTertiary};
   }
 
   h4 {
-    font-size: 80px;
-    color: ${colors.textTertiary};
-  }
-
-  h5 {
-    font-size: 72px;
+    font-size: 96px;
     color: ${colors.textTertiary};
   }
 
@@ -81,7 +77,7 @@ export const css = `
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 6px solid ${colors.border};
+    border: 8px solid ${colors.border};
   }
 
   header span {
@@ -102,9 +98,9 @@ export const css = `
   }
 
   .book img {
-    height: 640px;
+    height: 720px;
     width: auto;
     border-radius: 8px;
-    border: 4px solid ${colors.border};
+    border: 8px solid ${colors.border};
   }
 `

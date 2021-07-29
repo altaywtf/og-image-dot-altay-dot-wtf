@@ -17,7 +17,6 @@ export type Book = {
 export type Page = {
   type: 'page'
   title: string
-  oneliner: string
 }
 
 export type ParsedQuery = Note | Book | Page

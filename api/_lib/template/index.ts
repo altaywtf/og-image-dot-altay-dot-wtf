@@ -4,15 +4,17 @@ import { css } from './css'
 const renderNote = (note: Note) => `
   <div class="note">
     <h1>${note.title}</h1>
-    <h5>${note.oneliner}</h5>
+    <div style="margin-top: 60px;"></div>
+    <h4>${note.oneliner}</h4>
   </div>
 `
 
 const renderBook = (book: Book) => `
   <div class="book">
-    <div class="info">
+    <div>
       <h2>${book.title}</h2>
-      <h4>by ${book.author}</h4>
+      <div style="margin-top: 60px;"></div>
+      <h3>by ${book.author}</h3>
     </div>
 
     <img src="${book.coverImageURL}" />
@@ -22,7 +24,6 @@ const renderBook = (book: Book) => `
 const renderPage = (page: Page) => `
   <div class="page">
     <h1>${page.title}</h1>
-    <h3>${page.oneliner}</h3>
   </div>
 `
 
