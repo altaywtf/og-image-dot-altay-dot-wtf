@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "chrome-aws-lambda": "7.0.0",
-    "puppeteer-core": "7.0.0"
+    "puppeteer-core": "7.0.0",
+    "query-string": "^7.0.1"
   },
   "devDependencies": {
     "@types/puppeteer": "5.4.3",
