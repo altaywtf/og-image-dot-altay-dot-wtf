@@ -1,11 +1,11 @@
-import type { ParsedQuery, Note, Book, Page } from '../parser'
+import type { ParsedQuery, Post, Book, Page } from '../parser'
 import { css } from './css'
 
-const renderNote = (note: Note) => `
-  <div class="note">
-    <h1>${note.title}</h1>
+const renderPost = (post: Post) => `
+  <div class="post">
+    <h1>${post.title}</h1>
     <div style="margin-top: 60px;"></div>
-    <h4>${note.oneliner}</h4>
+    <h4>${post.oneliner}</h4>
   </div>
 `
 
@@ -29,8 +29,8 @@ const renderPage = (page: Page) => `
 
 const renderContent = (query: ParsedQuery) => {
   switch (query.type) {
-    case 'note':
-      return renderNote(query)
+    case 'post':
+      return renderPost(query)
 
     case 'book':
       return renderBook(query)

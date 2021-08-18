@@ -1,8 +1,8 @@
 import type { VercelRequest } from '@vercel/node'
 import qs from 'query-string'
 
-export type Note = {
-  type: 'note'
+export type Post = {
+  type: 'post'
   title: string
   oneliner: string
 }
@@ -19,15 +19,15 @@ export type Page = {
   title: string
 }
 
-export type ParsedQuery = Note | Book | Page
+export type ParsedQuery = Post | Book | Page
 
 export const parseRequest = (req: VercelRequest): ParsedQuery => {
   const { query } = qs.parseUrl(req.url)
   const { type } = query as unknown as ParsedQuery
 
   switch (type) {
-    case 'note':
-      return query as Note
+    case 'post':
+      return query as Post
 
     case 'book':
       return query as Book
